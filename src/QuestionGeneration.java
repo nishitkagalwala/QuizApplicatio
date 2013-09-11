@@ -24,7 +24,7 @@ class QuestionGeneration {
         }
         return count;
     }
-
+    
     public static QuestionGeneration[] category(String category) throws Exception {
         int rep[] = new int[10];
         rep[0] = random.nextInt(tableLength(category)) + 1;
