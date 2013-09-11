@@ -98,7 +98,7 @@ class Test extends QuestionGeneration {
 
     public static void main(String args[]) throws Exception {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.print("Press '1' for Category Quiz \n'2' For Random Quiz : ");
         QuestionGeneration question[] = QuestionGeneration.category("literature");
 
         for (int i = 0; i < question.length; i++) {
