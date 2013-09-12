@@ -2,13 +2,13 @@ package quizapp;
 
 import java.util.Calendar;
 import java.util.Scanner;
-import static quizapp.GeneralQuestions.general;
 import static quizapp.CategoryQuestions.category;
+import static quizapp.GeneralQuestions.general;
 
 class QuizApp {
 
     public static void main(String args[]) throws Exception {
-        Scanner sc = new Scanner(System.in);
+        //Hi nishit bc :D
         Scanner scanner = new Scanner(System.in);
         int choice;
         long time1, time2;
@@ -18,12 +18,12 @@ class QuizApp {
         c1 = Calendar.getInstance();
 
         System.out.print("Press '1' for Category Quiz '2' For Random Quiz : ");
-        choice = sc.nextInt();
+        choice = scanner.nextInt();
 
         switch (choice) {
             case 1:
                 System.out.print("Enter Category : ");
-                String category = sc.next();
+                String category = scanner.next();
 
                 question = category(category);
 
@@ -31,7 +31,7 @@ class QuizApp {
                 for (int i = 0; i < question.length; i++) {
                     System.out.println("\nQuestion " + (i + 1) + question[i]);
                 }
-                int iii = sc.nextInt();
+                int iii = scanner.nextInt();
                 c2 = Calendar.getInstance();
                 time2 = c2.getTimeInMillis();
                 System.out.println((time2 - time1) / 1000 + " Seconds");
@@ -45,7 +45,7 @@ class QuizApp {
                 for (int i = 0; i < question.length; i++) {
                     System.out.println("\nQuestion " + (i + 1) + question[i]);
                 }
-                int iiii = sc.nextInt();
+                int iiii = scanner.nextInt();
                 c2 = Calendar.getInstance();
                 time2 = c2.getTimeInMillis();
                 System.out.println((time2 - time1) / 1000 + " Seconds");
