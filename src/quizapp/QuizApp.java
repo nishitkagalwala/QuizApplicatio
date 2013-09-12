@@ -8,7 +8,7 @@ import static quizapp.GeneralQuestions.general;
 class QuizApp {
 
     public static void main(String args[]) throws Exception {
-        //Nishit was here
+        
         Scanner scanner = new Scanner(System.in);
         int choice;
         long time1, time2;
