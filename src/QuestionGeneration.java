@@ -60,16 +60,16 @@ class QuestionGeneration {
         for (int i = 0; i < 10; i++) {
             int ID = rep[i];
             //System.out.println("ID:" + ID);
-            ResultSet result1 = statement.executeQuery();
+             result = statement.executeQuery();
             //int flag = 0;
-            while (result1.next()) {
+            while (result.next()) {
                // System.out.println("s");
-                if (result1.getInt(1) == ID) {
-                    questionTemp[i].question = result1.getString(2);
-                    questionTemp[i].answer = result1.getString(3);
+                if (result.getInt(1) == ID) {
+                    questionTemp[i].question = result.getString(2);
+                    questionTemp[i].answer = result.getString(3);
                     int j = 4;
                     for (int k = 0; k < 4; k++) {
-                        questionTemp[i].option[k] = result1.getString(j++);
+                        questionTemp[i].option[k] = result.getString(j++);
                     }
 
                 }
@@ -102,7 +102,7 @@ class Test extends QuestionGeneration {
         QuestionGeneration question[] = QuestionGeneration.category("literature");
 
         for (int i = 0; i < question.length; i++) {
-            System.out.println(question[i]);
+            System.out.println("\n\n"+(i+1)+"\n"+question[i]);
         }
 
     }
