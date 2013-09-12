@@ -4,6 +4,7 @@ import static quizapp.RandomIDs.randomGeneration;
 import static quizapp.RandomIDs.randomInt;
 
 public class GeneralQuestions {
+
     public static QuestionGeneration[] general() throws Exception {
 
         int[] categoryID = randomGeneration("categories");

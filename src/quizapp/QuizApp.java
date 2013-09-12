@@ -11,13 +11,13 @@ class QuizApp {
         Scanner sc = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
         int choice;
-        long time1,time2;
+        long time1, time2;
         QuestionGeneration question[] = new QuestionGeneration[10];
-        Calendar c1,c2;
-        
+        Calendar c1, c2;
+
         c1 = Calendar.getInstance();
 
-        System.out.print("Press '1' for Category Quiz \n'2' For Random Quiz : ");
+        System.out.print("Press '1' for Category Quiz '2' For Random Quiz : ");
         choice = sc.nextInt();
 
         switch (choice) {
@@ -29,26 +29,25 @@ class QuizApp {
 
                 time1 = c1.getTimeInMillis();
                 for (int i = 0; i < question.length; i++) {
-                    System.out.println("" + (i + 1) + question[i]);
+                    System.out.println("\nQuestion " + (i + 1) + question[i]);
                 }
                 int iii = sc.nextInt();
                 c2 = Calendar.getInstance();
                 time2 = c2.getTimeInMillis();
-                System.out.println((time2 - time1) / 1000 + "Seconds");
+                System.out.println((time2 - time1) / 1000 + " Seconds");
 
                 break;
 
             case 2:
-                question= general();
+                question = general();
 
                 time1 = c1.getTimeInMillis();
                 for (int i = 0; i < question.length; i++) {
-                    System.out.println("\n" + (i + 1) + question[i]);
+                    System.out.println("\nQuestion " + (i + 1) + question[i]);
                 }
                 int iiii = sc.nextInt();
                 c2 = Calendar.getInstance();
                 time2 = c2.getTimeInMillis();
-
                 System.out.println((time2 - time1) / 1000 + " Seconds");
 
                 break;
