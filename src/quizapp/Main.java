@@ -126,6 +126,7 @@ public class Main extends javax.swing.JFrame {
     QuestionGeneration question[] = new QuestionGeneration[10];
 
     
+    @SuppressWarnings("empty-statement")
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             String question = getQuestion();
@@ -143,6 +144,7 @@ public class Main extends javax.swing.JFrame {
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Main().setVisible(true);
             }

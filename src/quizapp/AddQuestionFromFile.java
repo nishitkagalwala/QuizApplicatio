@@ -14,7 +14,7 @@ public class AddQuestionFromFile {
 
         FileReading file = new FileReading(fileName);
 
-        String[] fileData = file.OpenFile();
+        String[] fileData = FileReading.OpenFile();
 
         databaseResult db = new databaseResult(table);
         for (int i = 0; i < fileData.length / 6; i++) {
@@ -24,7 +24,7 @@ public class AddQuestionFromFile {
             String option_2 = fileData[3 + (6 * i)];
             String option_3 = fileData[4 + (6 * i)];
             String option_4 = fileData[5 + (6 * i)];
-            String pass = "INSERT INTO " + table + "(`ID`,`QUESTION`,`ANSWER`,`OPTION 1`,`OPTION 2`,`OPTION 3`,`OPTION 4`) VALUES(NULL,'" + q + "','" + a + "','" + "'" + option_1 + "','" + option_2 + "','" + option_3 + "','" + option_4 + "')";
+            String pass = "INSERT INTO " + table + "(`ID`,`QUESTION`,`ANSWER`,`OPTION 1`,`OPTION 2`,`OPTION 3`,`OPTION 4`) VALUES(NULL,'" + q + "','" + a + "','" + "" + option_1 + "','" + option_2 + "','" + option_3 + "','" + option_4 + "')";
             db.getStatement().executeUpdate(pass);
         }
     }

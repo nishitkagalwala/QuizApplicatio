@@ -55,7 +55,7 @@ class QuizApp {
         
         System.out.println("Enter Category in which questions are to be added from file");
         String cat = scanner.next();
-        //AddQuestionFromFile.add(cat);
-        AddQuestion.add(cat);
+        AddQuestionFromFile.add(cat);
+        //AddQuestion.add(cat);
     }
 }

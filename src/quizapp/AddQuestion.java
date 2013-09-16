@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 
 public class AddQuestion {
-
+    //Nishit bc kya chalu hai re ? :D 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static void add(String table) throws Exception {
         
