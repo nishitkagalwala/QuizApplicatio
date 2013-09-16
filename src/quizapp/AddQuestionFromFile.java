@@ -1,15 +1,16 @@
 package quizapp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class AddQuestionFromFile {
 
     public static void add(String table) throws Exception {
 
         String fileName;
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter The File Name With Path To Be Read : ");
-        fileName = sc.next();
+        fileName = br.readLine();
 
         FileReading file = new FileReading(fileName);
 

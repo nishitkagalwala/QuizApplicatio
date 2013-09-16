@@ -1,11 +1,12 @@
 package quizapp;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 
 public class AddQuestion {
 
-    static Scanner sc = new Scanner(System.in);
-
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static void add(String table) throws Exception {
         
         databaseResult db = new databaseResult(table);
@@ -14,15 +15,15 @@ public class AddQuestion {
 
 
         System.out.print("Enter The Question To Be Added : ");
-        question = sc.nextLine();
+        question = br.readLine();
 
         System.out.print("Enter The Answer To Be Added : ");
-        answer = sc.nextLine();
+        answer = br.readLine();
 
         System.out.print("Enter The Options To Be Added : ");
         for (int i = 0; i < 4; i++) {
             System.out.print("Option " + (i + 1) + " : ");
-            options[i] = sc.next();
+            options[i] = br.readLine();
         }
         
            String pass = "INSERT INTO " + table + "(`ID`,`QUESTION`,`ANSWER`,`OPTION 1`,`OPTION 2`,`OPTION 3`,`OPTION 4`) VALUES(NULL,'" + question + "','" + answer + "'," + "'" + options[0] + "','" + options[1] + "','" + options[2] + "','" + options[3] + "')";
