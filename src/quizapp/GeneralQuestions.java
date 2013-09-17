@@ -9,11 +9,11 @@ public class GeneralQuestions {
 
         int[] categoryID = randomGeneration("categories");
         String[] category = new String[10];
-        databaseResult db;
+        DatabaseResult db;
         int[] quesID = new int[10];
 
         for (int i = 0; i < 10; i++) {
-            db = new databaseResult("categories");
+            db = new DatabaseResult("categories");
             while (db.getResult().next()) {
                 if (db.getResult().getInt(1) == categoryID[i]) {
                     category[i] = db.getResult().getString(2);
@@ -32,7 +32,7 @@ public class GeneralQuestions {
         }
 
         for (int i = 0; i < 10; i++) {
-            db = new databaseResult(category[i]);
+            db = new DatabaseResult(category[i]);
 
             while (db.getResult().next()) {
                 if (db.getResult().getInt(1) == quesID[i]) {

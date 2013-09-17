@@ -1,5 +1,7 @@
 package quizapp;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Calendar;
 import java.util.Scanner;
 import static quizapp.CategoryQuestions.category;
@@ -8,7 +10,7 @@ import static quizapp.GeneralQuestions.general;
 class QuizApp {
 
     public static void main(String args[]) throws Exception {
-        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Scanner scanner = new Scanner(System.in);
         int choice;
         long time1, time2;
@@ -53,9 +55,18 @@ class QuizApp {
                 break;
         }
         
+        /*
         System.out.println("Enter Category in which questions are to be added from file");
         String cat = scanner.next();
         AddQuestionFromFile.add(cat);
-        //AddQuestion.add(cat);
+        AddQuestion.add(cat);
+        */
+        
+        System.out.println("Enter The Categories : ");
+        String s = br.readLine();
+        question = MultipleCategoryQuestions.multipleCategory(s);
+        
+        for(int i=0 ; i<question.length ; i++)
+            System.out.println("\nQuestion " + (i + 1) + question[i]);
     }
 }

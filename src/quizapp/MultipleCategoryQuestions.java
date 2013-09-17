@@ -1,13 +1,20 @@
-
 package quizapp;
 
-import static quizapp.RandomIDs.randomGeneration;
+import static quizapp.RandomIDs.randomInt;
 
-public class CategoryQuestions {
+public class MultipleCategoryQuestions {
 
-    public static QuestionGeneration[] category(String table) throws Exception {
+    public static QuestionGeneration[] multipleCategory(String s) throws Exception {
+        String categories[] = s.split(" ");
+        int categoryId[] = new int[10];
+        DatabaseResult db;
+        int quesID[] = new int[10];
 
-        int[] quesID = randomGeneration(table);
+        categoryId = RandomIDs.randomRepeat(categories.length);
+
+        for (int i = 0; i < 10; i++) {
+            quesID[i] = randomInt(categories[categoryId[i]]);
+        }
 
         QuestionGeneration[] questionTemp = new QuestionGeneration[10];
         for (int i = 0; i < 10; i++) {
@@ -15,8 +22,8 @@ public class CategoryQuestions {
         }
 
         for (int i = 0; i < 10; i++) {
-            DatabaseResult db = new DatabaseResult(table);
-            
+            db = new DatabaseResult(categories[categoryId[i]]);
+
             while (db.getResult().next()) {
                 if (db.getResult().getInt(1) == quesID[i]) {
                     questionTemp[i].question = db.getResult().getString(2);
@@ -28,6 +35,8 @@ public class CategoryQuestions {
                 }
             }
         }
+        for(int i=0 ; i<10 ; i++)
+            System.out.println(quesID[i]+ "  "+ categoryId[i]);
         return questionTemp;
     }
 }

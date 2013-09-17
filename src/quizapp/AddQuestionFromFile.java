@@ -16,7 +16,7 @@ public class AddQuestionFromFile {
 
         String[] fileData = FileReading.OpenFile();
 
-        databaseResult db = new databaseResult(table);
+        DatabaseResult db = new DatabaseResult(table);
         for (int i = 0; i < fileData.length / 6; i++) {
             String q = fileData[0 + (6 * i)];
             String a = fileData[1 + (6 * i)];

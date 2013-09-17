@@ -3,13 +3,12 @@ package quizapp;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-
 public class AddQuestion {
-    //Nishit bc kya chalu hai re ? :D 
+   
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static void add(String table) throws Exception {
         
-        databaseResult db = new databaseResult(table);
+        DatabaseResult db = new DatabaseResult(table);
         String question, answer;
         String options[] = new String[4];
 
@@ -24,8 +23,7 @@ public class AddQuestion {
         for (int i = 0; i < 4; i++) {
             System.out.print("Option " + (i + 1) + " : ");
             options[i] = br.readLine();
-        }
-        
+        }       
            String pass = "INSERT INTO " + table + "(`ID`,`QUESTION`,`ANSWER`,`OPTION 1`,`OPTION 2`,`OPTION 3`,`OPTION 4`) VALUES(NULL,'" + question + "','" + answer + "'," + "'" + options[0] + "','" + options[1] + "','" + options[2] + "','" + options[3] + "')";
            db.getStatement().executeUpdate(pass);
     }
