@@ -34,18 +34,4 @@ public class RandomIDs {
                 rep[i] = random.nextInt(length);
         return rep;
     }
-
-
-public static void main(String args[])throws Exception{
-    String s="music history geography";
-    String arr[] = s.split(" ");
-    
-    for(int i=0 ; i<arr.length ; i++)
-        System.out.print(arr[i]+"  ");
-    
-    int [] ID = randomRepeat(arr.length);
-        for(int i=0 ; i<ID.length ; i++)
-            System.out.print(ID[i]+" ");
-    
-}
 }
